@@ -1,0 +1,11 @@
+# Use crontab.guru to generate cron.
+
+CleanupAttachmentsWorker:
+  cron: "0 0 * * *" # Everyday
+  class: "CleanupAttachmentsWorker"
+  queue: low
+
+ResetCouponsWorker:
+  cron: "0 0 * * 6,0" # Every weekend
+  class: "ResetCouponsWorker"
+  queue: low

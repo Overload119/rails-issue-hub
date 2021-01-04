@@ -1,0 +1,15 @@
+[ignore]
+.*/node_modules/.*
+
+[include]
+<PROJECT_ROOT>/app/javascript/.*
+
+[libs]
+flow-typed
+
+[lints]
+
+[options]
+esproposal.optional_chaining=enable
+
+[strict]

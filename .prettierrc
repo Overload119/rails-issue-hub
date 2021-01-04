@@ -1,0 +1,33 @@
+{
+  "semi": true,
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": ["*.js"],
+      "options": {
+        "semi": true,
+        "arrowParens": "avoid",
+        "bracketSpacing": false,
+        "jsxBracketSameLine": true,
+        "printWidth": 80,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "quoteProps": "consistent"
+      }
+    },
+    {
+      "files": ["*.rb"],
+      "options": {
+        "printWidth": 80,
+        "trailingComma": "es5",
+        "rubySingleQuote": true,
+        "rubyHashLabel": true
+      }
+    }
+  ]
+}

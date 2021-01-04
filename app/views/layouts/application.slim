@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    = csrf_meta_tags
+    = stylesheet_packs_with_chunks_tag "application"
+    = stylesheet_link_tag "application"
+    - if browser.device.mobile?
+      meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1.0"
+      meta name="mobile-web-app-capable" content="yes"
+    - else
+      = stylesheet_link_tag "application.desktop"
+    meta name="turbolinks-cache-control" content="no-cache"
+    = yield :meta
+    link rel="manifest" href="/manifest.json"
+    = yield :head
+    = javascript_include_tag "application"
+    = javascript_packs_with_chunks_tag "application", data: { "turbolinks-track": true }, defer: true
+    title
+      | Test App
+  body class="#{params[:action]} #{params[:controller]} preload"
+    = include_gon
+    = yield
+    = redux_store_hydration_data
+    = yield :lib_js
+    = content_for :render_async
+    = yield :js
+

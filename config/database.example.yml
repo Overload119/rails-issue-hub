@@ -1,0 +1,19 @@
+default: &default
+  encoding: utf8mb4
+  collation: utf8mb4_bin
+  adapter: mysql2
+  pool: 20
+  timeout: 10000
+
+development:
+  <<: *default
+  database: aaa
+  username: aaa
+
+test:
+  <<: *default
+  database: aaa
+
+production:
+  <<: *default
+  database: aaaa
